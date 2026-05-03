@@ -1,0 +1,402 @@
+[gd_scene format=3 uid="uid://bltmeixnm3q4p"]
+
+[ext_resource type="Script" uid="uid://dck5dpstb85h1" path="res://scripts/game.gd" id="1_game"]
+[ext_resource type="Texture2D" uid="uid://65ny1pl6f147" path="res://assets/images/fundo.png" id="2_fundo"]
+[ext_resource type="Texture2D" uid="uid://bvr8f5h7tdxsf" path="res://assets/images/mao.png" id="3_mao"]
+[ext_resource type="Texture2D" uid="uid://cyh43jhg6ao0k" path="res://assets/images/unha_1.png" id="4_unha1"]
+[ext_resource type="Texture2D" uid="uid://cnefyevim3loq" path="res://assets/images/unha_2.png" id="5_unha2"]
+[ext_resource type="Texture2D" uid="uid://d1s8pi2tjuodw" path="res://assets/images/unha_3.png" id="6_unha3"]
+[ext_resource type="Texture2D" uid="uid://cue6jtl55f34t" path="res://assets/images/unha_4.png" id="7_unha4"]
+[ext_resource type="Texture2D" uid="uid://bcex5l5kikess" path="res://assets/images/unha_5.png" id="8_unha5"]
+[ext_resource type="Texture2D" uid="uid://1qpgloot3nca" path="res://assets/images/icone_som.png" id="9_icone_som"]
+[ext_resource type="AudioStream" uid="uid://bayle6bcwt2pt" path="res://assets/audio/musica.wav" id="10_music"]
+[ext_resource type="Texture2D" uid="uid://c2a6bm4nxmih2" path="res://assets/images/reiniciar.png" id="11_reiniciar"]
+[ext_resource type="Texture2D" uid="uid://dmltmyi015sea" path="res://assets/images/botao.png" id="12_botao"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(1, 1, 1, 0.85)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.666667, 0.831373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_normal"]
+texture = ExtResource("12_botao")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_pressed"]
+texture = ExtResource("12_botao")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.85, 0.85, 0.85, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_hover"]
+texture = ExtResource("12_botao")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1.15, 1.15, 1.15, 1)
+
+[node name="Game" type="Control" unique_id=108993118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_game")
+
+[node name="Background" type="TextureRect" parent="." unique_id=56141720]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_fundo")
+expand_mode = 1
+
+[node name="GameContainer" type="VBoxContainer" parent="." unique_id=35843737]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 24.0
+offset_right = -20.0
+offset_bottom = -20.0
+theme_override_constants/separation = 14
+
+[node name="LabelTitulo" type="Label" parent="GameContainer" unique_id=27491358]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.760784, 0.094118, 0.356863, 1)
+theme_override_font_sizes/font_size = 30
+text = "Salao das Silabas"
+horizontal_alignment = 1
+
+[node name="PainelImagem" type="PanelContainer" parent="GameContainer" unique_id=1228499522]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ImagemPalavra" type="TextureRect" parent="GameContainer/PainelImagem" unique_id=446512962]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelPalavra" type="Label" parent="GameContainer" unique_id=1628289828]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.290196, 0, 0.188235, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="LabelInstrucao" type="Label" parent="GameContainer" unique_id=25890909]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.078431, 0.341176, 1)
+theme_override_font_sizes/font_size = 18
+text = "Pinte a unha com a silaba certa!"
+horizontal_alignment = 1
+
+[node name="CenterMao" type="CenterContainer" parent="GameContainer" unique_id=995962528]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ControlMao" type="Control" parent="GameContainer/CenterMao" unique_id=91066461]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+
+[node name="SpriteMao" type="TextureRect" parent="GameContainer/CenterMao/ControlMao" unique_id=1061844902]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -26.0
+offset_right = 78.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mao")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Unha0" type="TextureButton" parent="GameContainer/CenterMao/ControlMao" unique_id=778033216]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 220.0
+offset_right = 236.0
+offset_bottom = 267.0
+texture_normal = ExtResource("4_unha1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha0" unique_id=787696194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.188, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha1" type="TextureButton" parent="GameContainer/CenterMao/ControlMao" unique_id=663460233]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 68.0
+offset_right = 307.0
+offset_bottom = 114.0
+texture_normal = ExtResource("5_unha2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha1" unique_id=1145177721]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.188, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha2" type="TextureButton" parent="GameContainer/CenterMao/ControlMao" unique_id=1563883486]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 30.0
+offset_right = 404.0
+offset_bottom = 79.0
+texture_normal = ExtResource("6_unha3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha2" unique_id=1555814843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.188, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha3" type="TextureButton" parent="GameContainer/CenterMao/ControlMao" unique_id=975120494]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 62.0
+offset_right = 496.0
+offset_bottom = 106.0
+texture_normal = ExtResource("7_unha4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha3" unique_id=1417073411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.188, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha4" type="TextureButton" parent="GameContainer/CenterMao/ControlMao" unique_id=616433656]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 143.0
+offset_right = 560.0
+offset_bottom = 182.0
+texture_normal = ExtResource("8_unha5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha4" unique_id=24569530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.188, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelProgresso" type="Label" parent="." unique_id=813041478]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -101.0
+offset_right = 100.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.678431, 0.078431, 0.341176, 1)
+theme_override_font_sizes/font_size = 18
+text = "Progresso:"
+horizontal_alignment = 1
+
+[node name="HBoxProgresso" type="HBoxContainer" parent="." unique_id=1011608860]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -65.0
+offset_right = 115.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Bolinha0" type="ColorRect" parent="HBoxProgresso" unique_id=2015571353]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.992, 0.867, 0.902, 1)
+
+[node name="Bolinha1" type="ColorRect" parent="HBoxProgresso" unique_id=1313052757]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.992, 0.867, 0.902, 1)
+
+[node name="Bolinha2" type="ColorRect" parent="HBoxProgresso" unique_id=468194051]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.992, 0.867, 0.902, 1)
+
+[node name="Bolinha3" type="ColorRect" parent="HBoxProgresso" unique_id=1610984731]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.992, 0.867, 0.902, 1)
+
+[node name="Bolinha4" type="ColorRect" parent="HBoxProgresso" unique_id=445357918]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.992, 0.867, 0.902, 1)
+
+[node name="VictoryScreen" type="Control" parent="." unique_id=978824358]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BgVictory" type="ColorRect" parent="VictoryScreen" unique_id=435627233]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.988235, 0.894118, 0.92549, 0.92)
+
+[node name="LabelParabens" type="Label" parent="VictoryScreen" unique_id=234482321]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.760784, 0.094118, 0.356863, 1)
+theme_override_font_sizes/font_size = 42
+text = "Parabens!
+Voce pintou
+todas as unhas!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnReiniciar" type="Button" parent="VictoryScreen" unique_id=194181593]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = -30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.5, 0.1, 0.3, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_hover")
+text = " Jogar de novo!"
+icon = ExtResource("11_reiniciar")
+expand_icon = true
+
+[node name="AudioVoz" type="AudioStreamPlayer" parent="." unique_id=2101010182]
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1401003075]
+stream = ExtResource("10_music")
+volume_db = -15.0
+autoplay = true
+
+[node name="VBoxVolume" type="VBoxContainer" parent="." unique_id=306716731]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -125.0
+offset_right = 80.0
+offset_bottom = 125.0
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="SliderVolume" type="VSlider" parent="VBoxVolume" unique_id=1398700625]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="BtnSom" type="TextureButton" parent="VBoxVolume" unique_id=1275794437]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("9_icone_som")
+ignore_texture_size = true
+stretch_mode = 5

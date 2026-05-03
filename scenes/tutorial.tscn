@@ -1,0 +1,481 @@
+[gd_scene format=3 uid="uid://tutorial_scene_uid"]
+
+[ext_resource type="Script" uid="uid://ctutorial_script" path="res://scripts/tutorial.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cfundo" path="res://assets/images/fundo.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://cmao" path="res://assets/images/mao.png" id="3_mao"]
+[ext_resource type="Texture2D" uid="uid://cunha1" path="res://assets/images/unha_1.png" id="4_u1"]
+[ext_resource type="Texture2D" uid="uid://cunha2" path="res://assets/images/unha_2.png" id="5_u2"]
+[ext_resource type="Texture2D" uid="uid://cunha3" path="res://assets/images/unha_3.png" id="6_u3"]
+[ext_resource type="Texture2D" uid="uid://cunha4" path="res://assets/images/unha_4.png" id="7_u4"]
+[ext_resource type="Texture2D" uid="uid://cunha5" path="res://assets/images/unha_5.png" id="8_u5"]
+[ext_resource type="Texture2D" uid="uid://cfada" path="res://assets/images/fada.png" id="9_fada"]
+[ext_resource type="AudioStream" uid="uid://caudio_intro" path="res://assets/audio/introducao.mp3" id="10_intro"]
+[ext_resource type="AudioStream" uid="uid://caudio_palavra" path="res://assets/audio/palavra.mp3" id="11_palavra"]
+[ext_resource type="AudioStream" uid="uid://caudio_unhas" path="res://assets/audio/explicando_unhas.mp3" id="12_unhas"]
+[ext_resource type="AudioStream" uid="uid://caudio_acao" path="res://assets/audio/acao_simulada.mp3" id="13_acao"]
+[ext_resource type="AudioStream" uid="uid://caudio_concl" path="res://assets/audio/conclusao.mp3" id="14_concl"]
+[ext_resource type="AudioStream" uid="uid://caudio_fin" path="res://assets/audio/finalização.mp3" id="15_fin"]
+[ext_resource type="Texture2D" uid="uid://ccursor" path="res://assets/images/cursor.png" id="16_cursor"]
+[ext_resource type="AudioStream" uid="uid://cmusica" path="res://assets/audio/musica.wav" id="17_music"]
+[ext_resource type="Texture2D" uid="uid://cicon_som" path="res://assets/images/icone_som.png" id="18_sound_icon"]
+[ext_resource type="Texture2D" uid="uid://cbtn_pular" path="res://assets/images/pular.png" id="19_pular"]
+[ext_resource type="Texture2D" uid="uid://cbtn_cont" path="res://assets/images/continuar.png" id="20_continuar"]
+[ext_resource type="Texture2D" uid="uid://cbtn_rein" path="res://assets/images/reiniciar.png" id="21_reiniciar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(1, 1, 1, 0.85)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.666667, 0.831373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_tutorial"]
+resource_name = "tutorial_sequence"
+length = 35.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioTutorial")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_intro")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_palavra")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_unhas")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_acao")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_concl")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("15_fin")
+}],
+"times": PackedFloat32Array(0.5, 5.0, 12.0, 18.0, 24.0, 30.0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameContainer/CenterMao/ControlMao/Unha2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5, 21.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GameContainer/CenterMao/ControlMao/Unha2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5, 21.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1.5, 1.5, 1.5, 1), Color(1, 1, 1, 1), Color(1.5, 1.5, 1.5, 1), Color(1, 1, 1, 1), Color(1.5, 1.5, 1.5, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameContainer/PainelImagem:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.0, 6.0, 11.0, 12.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1.5, 1.5, 1.5, 1), Color(1.5, 1.5, 1.5, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameContainer/LabelPalavra:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.0, 9.0, 11.0, 12.0, 21.5, 22.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.8, 0.1, 0.4, 1), Color(0.8, 0.1, 0.4, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0.8, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GameContainer/CenterMao:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12.0, 13.0, 23.0, 24.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1.3, 1.3, 1.3, 1), Color(1.3, 1.3, 1.3, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameContainer/CenterMao/ControlMao/Unha2:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 21.5, 22.0),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.4, 0.7, 1)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(34.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_tutorial_finished"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GameContainer/LabelPalavra:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 21.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["FA - ___", "FA - DA"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tut"]
+_data = {
+"tutorial_sequence": SubResource("Animation_tutorial")
+}
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="GameContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 24.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="LabelTitulo" type="Label" parent="GameContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.09, 0.35, 1)
+theme_override_font_sizes/font_size = 30
+text = "Como Jogar"
+horizontal_alignment = 1
+
+[node name="PainelImagem" type="PanelContainer" parent="GameContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ImagemPalavra" type="TextureRect" parent="GameContainer/PainelImagem"]
+layout_mode = 2
+texture = ExtResource("9_fada")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelPalavra" type="Label" parent="GameContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.18, 1)
+theme_override_font_sizes/font_size = 40
+text = "FA - ___"
+horizontal_alignment = 1
+
+[node name="CenterMao" type="CenterContainer" parent="GameContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ControlMao" type="Control" parent="GameContainer/CenterMao"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+
+[node name="SpriteMao" type="TextureRect" parent="GameContainer/CenterMao/ControlMao"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -26.0
+offset_right = 78.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mao")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Unha0" type="TextureButton" parent="GameContainer/CenterMao/ControlMao"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 220.0
+offset_right = 235.0
+offset_bottom = 266.0
+texture_normal = ExtResource("4_u1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.18, 1)
+theme_override_font_sizes/font_size = 28
+text = "CA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha1" type="TextureButton" parent="GameContainer/CenterMao/ControlMao"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 68.0
+offset_right = 307.0
+offset_bottom = 114.0
+texture_normal = ExtResource("5_u2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.18, 1)
+theme_override_font_sizes/font_size = 28
+text = "BA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha2" type="TextureButton" parent="GameContainer/CenterMao/ControlMao"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 30.0
+offset_right = 404.0
+offset_bottom = 79.0
+texture_normal = ExtResource("6_u3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.18, 1)
+theme_override_font_sizes/font_size = 28
+text = "DA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha3" type="TextureButton" parent="GameContainer/CenterMao/ControlMao"]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 62.0
+offset_right = 496.0
+offset_bottom = 106.0
+texture_normal = ExtResource("7_u4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.18, 1)
+theme_override_font_sizes/font_size = 28
+text = "MA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unha4" type="TextureButton" parent="GameContainer/CenterMao/ControlMao"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 143.0
+offset_right = 560.0
+offset_bottom = 182.0
+texture_normal = ExtResource("8_u5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameContainer/CenterMao/ControlMao/Unha4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29, 0, 0.18, 1)
+theme_override_font_sizes/font_size = 28
+text = "LA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+
+[node name="AudioTutorial" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_music")
+volume_db = -15.0
+autoplay = true
+
+[node name="VBoxVolume" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -125.0
+offset_right = 80.0
+offset_bottom = 125.0
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="SliderVolume" type="VSlider" parent="VBoxVolume"]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="BtnSom" type="TextureButton" parent="VBoxVolume"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("18_sound_icon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tut")
+}
+autoplay = "tutorial_sequence"
+
+[node name="UIEnd" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UIEnd"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39)
+
+[node name="VBox" type="VBoxContainer" parent="UIEnd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="BtnContinuar" type="TextureButton" parent="UIEnd/VBox"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("20_continuar")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnRepetir" type="TextureButton" parent="UIEnd/VBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("21_reiniciar")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnSkip" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 80.0
+grow_horizontal = 0
+texture_normal = ExtResource("19_pular")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="UIEnd/VBox/BtnContinuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="UIEnd/VBox/BtnRepetir" to="." method="_on_btn_repetir_pressed"]
+[connection signal="pressed" from="BtnSkip" to="." method="_on_btn_continuar_pressed"]
