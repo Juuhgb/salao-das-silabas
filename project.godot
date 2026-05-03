@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Salão_das_Silabas"
+config/name="Salão das Silabas"
+config/version="1.0"
 run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.svg"
+config/icon="uid://db45yipkbixoy"
 
 [display]
 

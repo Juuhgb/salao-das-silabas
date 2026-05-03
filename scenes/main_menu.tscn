@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://oa1t7v4dhhuu"]
 
-[ext_resource type="Script" uid="uid://c8js7fmain" path="res://scripts/main_menu.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://ctela_inicial" path="res://assets/images/tela_inicial.png" id="2_bg"]
-[ext_resource type="Texture2D" uid="uid://cbotao" path="res://assets/images/botao.png" id="3_btn"]
-[ext_resource type="Texture2D" uid="uid://ctitulo" path="res://assets/images/titulo.png" id="4_title"]
-[ext_resource type="AudioStream" uid="uid://cmusica" path="res://assets/audio/musica.wav" id="5_music"]
-[ext_resource type="Texture2D" uid="uid://cicon_som" path="res://assets/images/icone_som.png" id="6_sound_icon"]
+[ext_resource type="Script" uid="uid://cjk0bt6p5q4hb" path="res://scripts/main_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dqkgqkac6foan" path="res://assets/images/tela_inicial.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://dmltmyi015sea" path="res://assets/images/botao.png" id="3_btn"]
+[ext_resource type="Texture2D" uid="uid://busaxfgh1yp4k" path="res://assets/images/titulo.png" id="4_title"]
+[ext_resource type="AudioStream" uid="uid://bayle6bcwt2pt" path="res://assets/audio/musica.wav" id="5_music"]
+[ext_resource type="Texture2D" uid="uid://1qpgloot3nca" path="res://assets/images/icone_som.png" id="6_sound_icon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_normal"]
 texture = ExtResource("3_btn")
@@ -13,14 +13,6 @@ texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hover"]
-texture = ExtResource("3_btn")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-modulate_color = Color(1.15, 1.15, 1.15, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pressed"]
 texture = ExtResource("3_btn")
@@ -30,7 +22,15 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0.85, 0.85, 0.85, 1)
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hover"]
+texture = ExtResource("3_btn")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1.15, 1.15, 1.15, 1)
+
+[node name="MainMenu" type="Control" unique_id=1132222765]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +39,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1035912622]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,7 +50,7 @@ texture = ExtResource("2_bg")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1575621823]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,38 +58,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=174050190]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="LogoTitulo" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+[node name="LogoTitulo" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=943671583]
 custom_minimum_size = Vector2(800, 300)
 layout_mode = 2
 texture = ExtResource("4_title")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=965977758]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="BtnJogar" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="BtnJogar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=630908666]
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.5, 0.1, 0.3, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
 text = "JOGAR"
 
-[node name="MusicaFundo" type="AudioStreamPlayer" parent="."]
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1879580762]
 stream = ExtResource("5_music")
 autoplay = true
 
-[node name="VBoxVolume" type="VBoxContainer" parent="."]
+[node name="VBoxVolume" type="VBoxContainer" parent="." unique_id=1246555108]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -102,7 +101,7 @@ grow_vertical = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="SliderVolume" type="VSlider" parent="VBoxVolume"]
+[node name="SliderVolume" type="VSlider" parent="VBoxVolume" unique_id=1381278197]
 visible = false
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
@@ -111,7 +110,7 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="BtnSom" type="TextureButton" parent="VBoxVolume"]
+[node name="BtnSom" type="TextureButton" parent="VBoxVolume" unique_id=1091213374]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 texture_normal = ExtResource("6_sound_icon")

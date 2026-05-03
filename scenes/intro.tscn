@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://intro_scene_uid"]
+[gd_scene format=3 uid="uid://be2g3btrhfy6v"]
 
-[ext_resource type="Script" uid="uid://cintro_script" path="res://scripts/intro.gd" id="1_script"]
-[ext_resource type="VideoStream" uid="uid://cintro_video" path="res://assets/audio/IntroNinoEdu.ogv" id="2_video"]
+[ext_resource type="Script" uid="uid://cuyv51yqxwo55" path="res://scripts/intro.gd" id="1_script"]
+[ext_resource type="VideoStream" uid="uid://dqpgs3o2dr27d" path="res://assets/audio/IntroNinoEdu.ogv" id="2_video"]
 
-[node name="Intro" type="Control"]
+[node name="Intro" type="Control" unique_id=1909972123]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=251430510]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VideoPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=770553322]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
