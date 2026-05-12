@@ -19,7 +19,7 @@ O elemento central é uma **mão com cinco dedos**, onde cada unha contém uma s
 1.  **Desafio:** Uma imagem é exibida com sua palavra incompleta (ex: "GA - ___").
 2.  **Interação:** O jogador deve identificar a sílaba correta entre os cinco "esmaltes" (unhas) e clicar para "pintar a unha".
 3.  **Feedback:** 
-    *   **Acerto:** A unha ganha cor vibrante, brilhos e feedback sonoro alegre com narração da palavra.
+    *   **Acerto:** A unha ganha cor vibrante com narração da palavra.
     *   **Erro:** Feedback suave e encorajador (sem punição visual), incentivando a criança a tentar novamente.
 
 ## 🚀 Tecnologias Utilizadas
