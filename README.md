@@ -36,6 +36,9 @@ O elemento central é uma **mão com cinco dedos**, onde cada unha contém uma s
 3.  Abra o Godot e importe o arquivo `project.godot`.
 4.  Pressione `F5` para iniciar o jogo a partir da cena de introdução.
 
+Ou instale o executável para windows:
+[Link para Download](https://github.com/Juuhgb/salao-das-silabas/releases/download/v1.0/Salao-das-Silabas.exe)
+
 ---
 
 *Desenvolvido com ❤️ para transformar a alfabetização em uma experiência mágica.*
