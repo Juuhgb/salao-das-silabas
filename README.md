@@ -12,6 +12,16 @@ O jogo foi desenvolvido com foco no **Método ABACADA**, que associa três eleme
 *   **Inclusividade:** Design e mecânicas adaptadas para crianças com necessidades educacionais especiais, garantindo um ritmo de aprendizagem acolhedor.
 *   **Foco:** Desenvolvimento da consciência fonológica e habilidades iniciais de leitura.
 
+## 🎓 Contribuições Pedagógicas
+
+O **Salão das Sílabas** vai além do entretenimento, oferecendo benefícios estruturados para o processo de aprendizagem:
+
+*   **Consolidação da Consciência Fonológica:** Estimula a criança a identificar e manipular as unidades sonoras das palavras.
+*   **Associação Multimodal:** Ao unir a imagem ao som e à escrita, o jogo reforça diferentes vias de processamento cognitivo, facilitando a alfabetização.
+*   **Ambiente de Baixa Ansiedade:** O sistema de feedback foi desenhado para ser encorajador e livre de punições, o que é fundamental para crianças com TEA, TDAH ou dificuldades de aprendizagem.
+*   **Desenvolvimento da Percepção Visual:** O uso de distratores pedagógicos (sílabas incorretas) exercita a atenção seletiva e a discriminação de grafemas.
+*   **Estímulo à Autonomia:** A interface intuitiva permite que a criança progrida no seu próprio ritmo, desenvolvendo confiança em suas habilidades de leitura.
+
 ## 💅 Mecânicas do Jogo
 
 O elemento central é uma **mão com cinco dedos**, onde cada unha contém uma sílaba.
